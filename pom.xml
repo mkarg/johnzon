@@ -45,7 +45,7 @@
     <johnzon.site.url>https://svn.apache.org/repos/asf/johnzon/site/publish/</johnzon.site.url>
     <pubsub.url>scm:svn:${johnzon.site.url}</pubsub.url>
     <staging.directory>${project.build.directory}/site</staging.directory>
-    <felix.plugin.version>4.0.0</felix.plugin.version>
+    <felix.plugin.version>5.1.2</felix.plugin.version>
     <bnd.version.policy>[$(version;==;$(@)),$(version;+;$(@)))</bnd.version.policy>
     <java-compile.version>1.8</java-compile.version>
     <cxf.version>3.0.0</cxf.version>

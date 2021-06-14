@@ -25,6 +25,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
+  <groupId>de.quipsy.karg</groupId>
   <artifactId>johnzon-jsonb</artifactId>
   <name>Johnzon :: JSON-B Implementation</name>
   <packaging>bundle</packaging>

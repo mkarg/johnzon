@@ -21,7 +21,9 @@ package org.apache.johnzon.jsonb;
 import java.math.BigDecimal;
 import java.util.function.Supplier;
 
+import javax.json.JsonArray;
 import javax.json.JsonNumber;
+import javax.json.JsonObject;
 import javax.json.JsonString;
 import javax.json.JsonValue;
 import javax.json.stream.JsonLocation;
@@ -71,8 +73,8 @@ class JsonValueParserAdapter<T extends JsonValue> implements JsonParser {
     
     public static JsonParser createFor(JsonValue jsonValue, Supplier<JsonParserFactory> parserFactoryProvider) {
         switch (jsonValue.getValueType()) {
-            case OBJECT: return parserFactoryProvider.get().createParser(jsonValue.asJsonObject());
-            case ARRAY: return parserFactoryProvider.get().createParser(jsonValue.asJsonArray());
+            case OBJECT: return parserFactoryProvider.get().createParser((JsonObject) jsonValue);
+            case ARRAY: return parserFactoryProvider.get().createParser((JsonArray) jsonValue);
             case STRING: return new JsonStringParserAdapter((JsonString) jsonValue);
             case NUMBER: return new JsonNumberParserAdapter((JsonNumber) jsonValue);
             default: return new JsonValueParserAdapter<>(jsonValue);
